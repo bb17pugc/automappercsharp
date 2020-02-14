@@ -8,7 +8,7 @@ namespace AutomapperTest.Models.Core
 {
     public class CollectionBase<T> : ICollection<T>
     {
-        ICollection<T> _items;
+        public ICollection<T> _items;
         public CollectionBase()
         {
             _items = new List<T>();

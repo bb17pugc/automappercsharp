@@ -15,12 +15,15 @@ namespace AutomapperCustom
     {
         public static void Main(string[] args)
         {
+            var chilCollection = new ChildrenCollection();
             var listOfElelement = new List<ChildrenElements>() {
                 new ChildrenElements() { CityName = "Lahore", SchoolName = "City School Lahore" },
                 new ChildrenElements() { CityName = "Karachi", SchoolName = "City School Karachi" }
             };
-            var chilCollection = new ChildrenCollection() { DefaultValue = -2, FullName = "Children Name 2", Enabled = true };
             listOfElelement.ForEach(r => chilCollection.Add(r));
+            chilCollection.DefaultValue = -2;
+            chilCollection.FullName = "Children Name 2";
+            chilCollection.Enabled=true;
             IChildren children1 = new Children() { Name = "Fahad", FatherName = "Anwar UL Haq", childrenCollection = chilCollection };
             Children children2 = new Children(children1, true);
             Children children3 = new Children(children1, false);
